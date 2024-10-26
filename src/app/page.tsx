@@ -1,101 +1,127 @@
+// src/app/page.tsx
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Image from "next/image";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div>
+      <Header />
+
+      {/* Full-Screen Banner Section */}
+      <section className="relative h-screen scroll-m-11">
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/pic3.jpg"
+          alt="Banner Image"
+          fill
+          style={{ objectFit: "cover" }}
+          className="rounded-lg"
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <h1 className="text-2xl font-mono sm:text-3xl md:text-5xl font-bold text-center text-white px-4">
+            THAT&apos;S ME NIRMA QURESHI, A FRONTEND DEVELOPER
+          </h1>
         </div>
+      </section>
+
+      <main className="container mx-auto my-8 space-y-16">
+        {/* About Section */}
+        <section id="about" className="text-center px-4">
+          <h2 className="text-4xl font-extrabold mb-4">About Us</h2>
+          <p className="text-gray-600 font-extrabold">
+            &quot;I am Nirma Qureshi, a committed and detail-oriented graduate
+            in Web Development from Tech Force Pakistan. Currently, I am
+            furthering my knowledge in the field of Artificial Intelligence at
+            GIAIC, where I am engaged in advanced studies that enhance my
+            technical acumen. I possess a robust foundation in TypeScript,
+            underscored by my recent achievements in the Quarter 1 examinations.
+            At present, my focus is directed towards mastering Next.js, a
+            pivotal framework in modern web development. My diverse academic
+            background in pre-medical studies enriches my perspective, allowing
+            me to blend analytical skills with creative problem-solving. This
+            unique combination enables me to harness my capabilities in web
+            development and AI, positioning me to make meaningful contributions
+            to innovative and impactful projects.&quot;
+          </p>
+        </section>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className="text-center px-4">
+          <h2 className="text-3xl font-extrabold mb-2 ">Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {/* Project 1 */}
+            <a
+              href="https://animated-portfolio-3kei.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 ease-in-out hover:scale-105 h-64 md:h-64"
+            >
+              <Image
+                src="/pic1.png"
+                alt="Project 1"
+                fill
+                style={{ objectFit: "cover" }}
+                className="rounded-t-lg"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-white text-lg font-semibold">Project 1</p>
+              </div>
+            </a>
+
+            {/* Project 2 */}
+            <a
+              href="https://next-js-class-assignment-peach.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 ease-in-out hover:scale-105 h-64 md:h-64"
+            >
+              <Image
+                src="/pic.png"
+                alt="Project 2"
+                fill
+                style={{ objectFit: "cover" }}
+                className="rounded-t-lg"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-white text-lg font-semibold">Project 2</p>
+              </div>
+            </a>
+
+            {/* Project 3 */}
+            <a
+              href="https://nextjs-class-assignment-2.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-gray-100 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 ease-in-out hover:scale-105 h-64 md:h-64"
+            >
+              <Image
+                src="/pic2.png"
+                alt="Project 3"
+                fill
+                style={{ objectFit: "cover" }}
+                className="rounded-t-lg"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-white text-lg font-semibold">Project 3</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="text-center px-4">
+          <h2 className="text-3xl font-extrabold mb-4">Contact</h2>
+          <p className="text-gray-600 font-extrabold">
+            Get in touch with us for more information or collaborations!
+          </p>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
-}
+};
+
+export default Home;

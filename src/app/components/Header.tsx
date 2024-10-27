@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         <h1 className="text-xl font-mono">PORTFOLIO</h1>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden focus:outline-none  bg-white"
+          className="md:hidden focus:outline-none bg-white"
           aria-label="Toggle menu"
         >
           {isOpen ? "🤍" : "🤍"}
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         <nav className={`md:flex ${isOpen ? "block" : "hidden"} md:block`}>
           <ul
             className={`flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 bg-gray-700 md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out ${
-              isOpen ? "opacity-100" : "opacity-0"
+              isOpen ? "opacity-100" : "md:opacity-100 opacity-0"
             }`}
           >
             <li>
@@ -54,13 +54,6 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
- 
-
-
-
-
-
 
 
 
